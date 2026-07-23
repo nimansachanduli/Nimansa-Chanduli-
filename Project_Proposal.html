@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Proposal - Brainy Styles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            --secondary: #06b6d4;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f9fafb;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
+            background-color: #f3f4f6;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .proposal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Cover Page */
+        .cover-page {
+            background: var(--primary-gradient);
+            padding: 80px 60px;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+
+        .cover-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 24px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .cover-title {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .cover-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .cover-meta {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 30px;
+            margin-top: 20px;
+        }
+
+        .meta-item {
+            text-align: left;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            margin-bottom: 4px;
+        }
+
+        .meta-val {
+            font-weight: 600;
+        }
+
+        /* Content Area */
+        .proposal-body {
+            padding: 60px;
+        }
+
+        h2.section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+        }
+
+        h2.section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        h2.section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        li i {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        /* Callout Box */
+        .info-card {
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--secondary);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .info-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        /* Table */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 15px;
+        }
+
+        .tech-table th, .tech-table td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tech-table th {
+            background-color: var(--bg-light);
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .tech-table td {
+            color: var(--text-muted);
+        }
+
+        .badge-tech {
+            background: #e0e7ff;
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Action Panel */
+        .action-panel {
+            text-align: center;
+            padding: 40px 60px;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-print {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+        }
+
+        .btn-print:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+            background: #4338ca;
+        }
+
+        /* Page Breaks for Printing */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+
+            .proposal-container {
+                box-shadow: none;
+                border: none;
+            }
+
+            .action-panel {
+                display: none;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="proposal-container">
+        <!-- Cover Page -->
+        <div class="cover-page">
+            <span class="cover-badge">Assignment Project Proposal</span>
+            <h1 class="cover-title">Brainy Styles</h1>
+            <p class="cover-subtitle">Design & Front-end Implementation of an Online Clothing Store</p>
+            
+            <div class="cover-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Prepared For</div>
+                    <div class="meta-val">Web Programming Evaluation</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Location</div>
+                    <div class="meta-val">Matara, Sri Lanka</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Date</div>
+                    <div class="meta-val">July 2026</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proposal Content -->
+        <div class="proposal-body">
+            
+            <!-- Section 1 -->
+            <h2 class="section-title">1. Introduction & Background</h2>
+            <p>
+                <strong>Brainy Styles</strong> is a local clothing boutique operating in Kotuwegoda, Matara. It caters to a diverse range of customers with premium collections for men, ladies, and children. In order to match the evolving retail ecosystem, this project aims to create a web presence that acts as a digital showroom for their collections.
+            </p>
+            <p>
+                The digital platform allows users to explore specific sections, view item descriptions, check pricing in Sri Lankan Rupees (LKR), and find operational details such as opening hours and contact details, ensuring smooth integration between digital browsing and physical store visits.
+            </p>
+
+            <div class="info-card">
+                <h4>Store Location & Operations</h4>
+                <p style="margin-bottom: 0; font-size: 14px;">
+                    <i class="bi bi-geo-alt-fill" style="color: var(--secondary);"></i> <strong>Address:</strong> 13A, Old Tangalle Road, Kotuwegoda, Matara.<br>
+                    <i class="bi bi-clock-fill" style="color: var(--secondary);"></i> <strong>Hours:</strong> Mon - Sat: 9:00 AM - 7:00 PM | Sun: 9:30 AM - 6:30 PM
+                </p>
+            </div>
+
+            <!-- Section 2 -->
+            <h2 class="section-title">2. Objectives</h2>
+            <ul>
+                <li><i class="bi bi-check-circle-fill"></i><strong>Modern Interface:</strong> Build an eye-catching, contemporary retail interface to showcase apparel.</li>
+                <li><i class="bi bi-check-circle-fill"></i><strong>Categorized Portals:</strong> Implement discrete sections for Kid's, Men's, and Ladies' categories.</li>
+                <li><i class="bi bi-check-circle-fill"></i><strong>Responsive Layout:</strong> Ensure standard layouts fit elegantly across a spectrum of screen dimensions.</li>
+                <li><i class="bi bi-check-circle-fill"></i><strong>Interactive UI Elements:</strong> Build custom animations, shadow effects, and glowing hover transitions.</li>
+            </ul>
+
+            <!-- Page Break for Printing -->
+            <div class="page-break"></div>
+
+            <!-- Section 3 -->
+            <h2 class="section-title">3. Structure & Navigation Flow</h2>
+            <p>
+                The web system employs a clean, decentralized multi-page layout. The key sections are mapped as follows:
+            </p>
+            <ul>
+                <li><i class="bi bi-arrow-right-short"></i><strong>Home (INDEX.HTML):</strong> Main landing page introducing the brand, hours, and store location.</li>
+                <li><i class="bi bi-arrow-right-short"></i><strong>Sections Hub (Buy.html):</strong> Overview of departments (Kids, Men, Ladies) acting as a navigation hub.</li>
+                <li><i class="bi bi-arrow-right-short"></i><strong>Kids Store (Kids.html):</strong> Catalog of kids' clothing.</li>
+                <li><i class="bi bi-arrow-right-short"></i><strong>Men's Store (Boy's.html):</strong> Catalog of men's outfits.</li>
+                <li><i class="bi bi-arrow-right-short"></i><strong>Ladies Store (ladies.html):</strong> Detailed catalog of female attire and cardigans.</li>
+            </ul>
+
+            <!-- Section 4 -->
+            <h2 class="section-title">4. Technology Stack</h2>
+            <table class="tech-table">
+                <thead>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Component</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge-tech">HTML5</span></td>
+                        <td>Web Structure</td>
+                        <td>Forms the semantic base and container models for pages.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-tech">CSS3</span></td>
+                        <td>Custom Styles</td>
+                        <td>Delivers glow effects, page transitions, and color theme configurations.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-tech">Bootstrap 5</span></td>
+                        <td>UI Framework</td>
+                        <td>Facilitates responsive layouts, grids, and navbar functionality.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge-tech">Google Fonts</span></td>
+                        <td>Typography</td>
+                        <td>Integrates the "Plus Jakarta Sans" typeface for high-end readability.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Section 5 -->
+            <h2 class="section-title">5. Future Enhancements</h2>
+            <ul>
+                <li><i class="bi bi-plus-circle-fill"></i><strong>Shopping Cart:</strong> An interactive cart where customers can collect products during their session.</li>
+                <li><i class="bi bi-plus-circle-fill"></i><strong>Dynamic Database:</strong> A backend utilizing SQL or NoSQL databases to store inventory details dynamically.</li>
+                <li><i class="bi bi-plus-circle-fill"></i><strong>Online Payment Gateway:</strong> Safe checkout through Payhere, PayPal, or Stripe.</li>
+                <li><i class="bi bi-plus-circle-fill"></i><strong>Search & Filter:</strong> Fast product filtering by sizes, colors, and prices.</li>
+            </ul>
+
+        </div>
+
+        <!-- Footer Control panel -->
+        <div class="action-panel">
+            <span style="font-size: 13px; color: var(--text-muted);">Open in browser and click print to save as a PDF.</span>
+            <button class="btn-print" onclick="window.print()">
+                <i class="bi bi-printer-fill"></i> Print / Save PDF
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
